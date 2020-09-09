@@ -1,0 +1,4 @@
+2020-09-06T17:23:09Z INFO application started
+2020-09-06T17:24:09Z ERROR an exception occurred
+2020-09-06T17:24:09Z ERROR Failed to read the text file
+2020-09-06T17:25:20Z INFO user input captured
