@@ -5,7 +5,7 @@ public class CommandLineInput implements Input{
     private final Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void getInput() {
+    public String getInput() {
         return scanner.nextLine();
     }
 }
