@@ -1,8 +1,6 @@
 package emailRepository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MysqlEmailRepository implements EmailRepository {
@@ -23,6 +21,16 @@ public class MysqlEmailRepository implements EmailRepository {
     }
 
     public ArrayList<String> ReadOperation(){
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(quary);
+            while (rs.next()) {
+                userData.add(rs.getString(1));
+            }
+            return userData;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return null;
     }
 }
