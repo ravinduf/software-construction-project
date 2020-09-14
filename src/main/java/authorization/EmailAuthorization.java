@@ -9,7 +9,11 @@ public class EmailAuthorization implements Authorization{
 
     public ArrayList<String> Validation(ArrayList<String> emails){
         EmailValidator validator = EmailValidator.getInstance();
-
+        for ( String email : emails ) {
+            if(validator.isValid(email)) {
+                newEmails.add(email);
+            }
+        }
         return newEmails;
     }
 }
