@@ -10,7 +10,7 @@ public class FileTimeStampRepository {
 
     public String GetTimeStamp() {
         String time = "";
-        File file = new File("");
+        File file = new File("filesdir\\timeStamp.txt");
 
         try {
             fileInputStream = new FileInputStream(file);
