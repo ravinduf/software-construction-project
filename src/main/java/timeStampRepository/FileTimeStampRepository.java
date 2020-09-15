@@ -3,7 +3,7 @@ package timeStampRepository;
 import java.io.*;
 import java.util.*;
 
-public class FileTimeStampRepository {
+public class FileTimeStampRepository implements TimeStampRepository {
     FileInputStream fileInputStream;
     InputStreamReader inputStreamReader;
     BufferedReader bufferedReader;
@@ -36,4 +36,19 @@ public class FileTimeStampRepository {
         return time;
     }
 
+    public void SetTimeStamp(String time) {
+        if ( time != null ){
+            FileWriter fileWriter = null;
+            File file = new File("D:\\practices\\java practice\\untitled8\\src\\resources\\timeStamp.txt");
+            try {
+                fileWriter = new FileWriter(file, false);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        else {
+            return;
+        }
+    }
 }
