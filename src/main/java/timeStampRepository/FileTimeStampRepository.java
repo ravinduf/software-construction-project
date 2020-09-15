@@ -45,7 +45,16 @@ public class FileTimeStampRepository implements TimeStampRepository {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+            try {
+                fileWriter.write(time);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else {
             return;
