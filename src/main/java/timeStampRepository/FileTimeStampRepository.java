@@ -8,5 +8,17 @@ public class FileTimeStampRepository {
     InputStreamReader inputStreamReader;
     BufferedReader bufferedReader;
 
+    public String GetTimeStamp() {
+        String time = "";
+        File file = new File("");
+
+        try {
+            fileInputStream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        inputStreamReader = new InputStreamReader(fileInputStream);
+        bufferedReader = new BufferedReader(inputStreamReader);
+    }
 
 }
