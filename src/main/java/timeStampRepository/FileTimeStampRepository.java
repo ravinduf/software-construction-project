@@ -19,6 +19,21 @@ public class FileTimeStampRepository {
         }
         inputStreamReader = new InputStreamReader(fileInputStream);
         bufferedReader = new BufferedReader(inputStreamReader);
+
+        try {
+            time = bufferedReader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            fileInputStream.close();
+            inputStreamReader.close();
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return time;
     }
 
 }
