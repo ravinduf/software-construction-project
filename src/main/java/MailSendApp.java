@@ -73,12 +73,20 @@ public class MailSendApp {
 
         ArrayList<String> emails = emailRepository.ReadOperation();
 
-
         if (emails == null) {
             ui.printData("No emails in database");
             return;
         }
-        
+
+        ArrayList<String> returnMessage = emailHub.EmailSendRepository(emails, errorMessage);
+        if (readedData == null) {
+            ui.printData("Cannot send emails");
+        }
+        else {
+            System.out.println(errorMessage);
+            ui.printData("EMAILS send");
+        }
+
 
     }
 }
