@@ -109,5 +109,27 @@ public class FilterOperationTest {
 
         assertEquals(AssumeOutPutString, data);
     }
+    @Test
+    public void GetLastTimeStampHasReadedData() {
+        ArrayList<String> readedData = new ArrayList<String>();
+        readedData.add("2020-09-06T17:23:09Z INFO application started");
+        readedData.add("2020-09-06T17:24:09Z ERROR an exception occurred");
+        readedData.add("2020-09-06T17:24:09Z ERROR Failed to read the text file");
+        readedData.add("2020-09-06T17:25:20Z INFO user input captured");
+        readedData.add("2020-09-06T17:26:09Z INFO application started");
+        readedData.add("2020-09-06T17:27:19Z ERROR user password incorrect");
+        readedData.add("2020-09-06T17:28:09Z ERROR can't file in that location");
 
+        Operation operation = new FilterOperation();
+        String lastTimeStamp =  operation.getLastTimeStamp(readedData);
+        assertEquals("2020-09-06T17:28:09Z", lastTimeStamp);
+    }
+    @Test
+    public void GetLastTimeStampNoReadedData() {
+        ArrayList<String> readedData = new ArrayList<String>();
+
+        Operation operation = new FilterOperation();
+        String lastTimeStamp =  operation.getLastTimeStamp(readedData);
+        assertEquals(null, lastTimeStamp);
+    }
 }
