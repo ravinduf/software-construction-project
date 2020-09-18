@@ -8,6 +8,7 @@ import repository.StringRepository;
 import timeStampRepository.TimeStampRepository;
 import ui.UI;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MailSendApp {
@@ -40,6 +41,22 @@ public class MailSendApp {
         String LastTimeStamp = null;
 
         String filePath = input.getInput();
-        
+
+        try {
+            readedData = stringRepository.FileRead(filePath);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (readedData == null) {
+            ui.printData("LOG file is empty");
+            return;
+        }
+
+        timeStamp = timeStampRepository.GetTimeStamp();
+        errorMessage = operation.GetErrors( readedData, timeStamp );
+
+
     }
 }
