@@ -21,7 +21,7 @@ public class FilterOperationTest {
         passedData.add("2020-09-06T17:28:09Z ERROR can't file in that location");
 
         Operation operation = new FilterOperation();
-        String data = operation.GetError(passedData, "2020-09-06T17:23:09Z");
+        String data = operation.GetErrors(passedData, "2020-09-06T17:23:09Z");
 
         String AssumeOutPutString = "an exception occurred\n" +
                 "Failed to read the text file\n" +
@@ -43,7 +43,7 @@ public class FilterOperationTest {
 //        passedData.add("2020-09-06T17:28:09Z ERROR can't file in that location");
 
         Operation operation = new FilterOperation();
-        String data = operation.GetError(passedData, "2020-09-06T17:23:09Z");
+        String data = operation.GetErrors(passedData, "2020-09-06T17:23:09Z");
 
         String AssumeOutPutString = "";
 
@@ -62,7 +62,7 @@ public class FilterOperationTest {
         passedData.add("2020-09-06T17:28:09Z ERROR can't file in that location");
 
         Operation operation = new FilterOperation();
-        String data = operation.GetError(passedData, "");
+        String data = operation.GetErrors(passedData, "");
 
         String AssumeOutPutString =  "an exception occurred\n" +
                 "Failed to read the text file\n" +
@@ -84,7 +84,7 @@ public class FilterOperationTest {
 //        passedData.add("2020-09-06T17:28:09Z ERROR can't file in that location");
 
         Operation operation = new FilterOperation();
-        String data = operation.GetError(passedData, "");
+        String data = operation.GetErrors(passedData, "");
 
         String AssumeOutPutString =  "";
 
@@ -103,7 +103,7 @@ public class FilterOperationTest {
         passedData.add("2020-09-06T17:28:09Z ERROR can't file in that location");
 
         Operation operation = new FilterOperation();
-        String data = operation.GetError(passedData, "2020-09-06T17:28:09Z");
+        String data = operation.GetErrors(passedData, "2020-09-06T17:28:09Z");
 
         String AssumeOutPutString =  null;
 
