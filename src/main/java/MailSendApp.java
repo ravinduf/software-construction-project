@@ -57,6 +57,28 @@ public class MailSendApp {
         timeStamp = timeStampRepository.GetTimeStamp();
         errorMessage = operation.GetErrors( readedData, timeStamp );
 
+        if (errorMessage == null) {
+            ui.printData("No Errors in file");
+            return;
+        }
+
+        LastTimeStamp = operation.getLastTimeStamp( readedData );
+
+        if (LastTimeStamp == null) {
+            ui.printData("Error occurs");
+            return;
+        }
+
+        timeStampRepository.SetTimeStamp(LastTimeStamp);
+
+        ArrayList<String> emails = emailRepository.ReadOperation();
+
+
+        if (emails == null) {
+            ui.printData("No emails in database");
+            return;
+        }
+        
 
     }
 }
