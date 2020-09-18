@@ -22,8 +22,8 @@ public class MailSendApp {
     private final UI ui;
 
     public MailSendApp(Input input, StringRepository stringRepository, TimeStampRepository timeStampRepository,
-                   Operation operation, EmailRepository emailRepository,
-                   EmailHub emailHub, UI ui) {
+                       Operation operation, EmailRepository emailRepository,
+                       Authorization authorization, EmailHub emailHub, UI ui) {
         this.input = input;
         this.stringRepository = stringRepository;
         this.timeStampRepository = timeStampRepository;
@@ -36,9 +36,9 @@ public class MailSendApp {
 
     public void Execute() {
         ArrayList<String> readedData = null;
-        String timeStamp = null;
-        String errorMessage = null;
-        String LastTimeStamp = null;
+        String timeStamp;
+        String errorMessage;
+        String LastTimeStamp;
 
         String filePath = input.getInput();
 

@@ -1,4 +1,5 @@
 import Input.CommandLineInput;
+import Input.Input;
 import authorization.Authorization;
 import authorization.EmailAuthorization;
 import emailManager.EmailHub;
@@ -21,13 +22,11 @@ public class Main {
         StringRepository stringRepository = new FileStringRepository();
         TimeStampRepository timeStampReposiroty = new FileTimeStampRepository();
         Operation operation = new FilterOperation();
-        Operation operation1 = new FilterOperation();
-
         EmailRepository emailRepository = new MysqlEmailRepository();
         Authorization authorization = new EmailAuthorization();
         EmailHub emailHub = new EmailHub();
         UI ui = new CommandLineUI();
-        MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampReposiroty, operation, operation1, timeStampReposiroty1,
+        MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampReposiroty, operation,
                 emailRepository, authorization, emailHub, ui);
         mailSendApp.Execute();
 
