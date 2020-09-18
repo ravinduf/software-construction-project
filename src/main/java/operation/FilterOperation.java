@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class FilterOperation implements Operation {
 
-    public String GetError ( ArrayList<String> readedDate, String time ) {
+    public String GetErrors ( ArrayList<String> readedDate, String time ) {
         Date date = null;
         String errorMessage = "";
 //      String sDate6 = "2020-09-06T17:29:20Z";
