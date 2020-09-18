@@ -20,7 +20,9 @@ public class FilterOperation implements Operation {
             if( readedDate.size() > 0) {
 
                 if ( time != "") {
-                    date = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(time.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
+                    if ( time != null ) {
+                        date = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(time.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
+                    }
                 }
 //        System.out.println(date);
 
