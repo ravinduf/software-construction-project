@@ -8,6 +8,8 @@ import repository.StringRepository;
 import timeStampRepository.TimeStampRepository;
 import ui.UI;
 
+import java.util.ArrayList;
+
 public class MailSendApp {
     private final Input input;
     private final StringRepository stringRepository;
@@ -31,5 +33,13 @@ public class MailSendApp {
         this.ui = ui;
     }
 
+    public void Execute() {
+        ArrayList<String> readedData = null;
+        String timeStamp = null;
+        String errorMessage = null;
+        String LastTimeStamp = null;
 
+        String filePath = input.getInput();
+        
+    }
 }
