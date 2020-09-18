@@ -24,17 +24,16 @@ public class FileStringRepository implements StringRepository {
         inputStreamReader = new InputStreamReader(fileInputStream);
         bufferedReader = new BufferedReader(inputStreamReader);
 
-        while ((line = bufferedReader.readLine())!= null) {
+        while ((line = bufferedReader.readLine()) != null) {
             readedData.add(line);
         }
         fileInputStream.close();
         inputStreamReader.close();
         bufferedReader.close();
-        if (readedData != null ) {
+        if (readedData != null) {
             return readedData;
         }
         //if the log file is empty
         return null;
     }
-
 }
