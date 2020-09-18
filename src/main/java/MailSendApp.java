@@ -83,7 +83,6 @@ public class MailSendApp {
             ui.printData("Cannot send emails");
         }
         else {
-            System.out.println(errorMessage);
             ui.printData("EMAILS send");
         }
 
