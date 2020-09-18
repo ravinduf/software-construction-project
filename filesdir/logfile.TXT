@@ -2,3 +2,16 @@
 2020-09-06T17:24:09Z ERROR an exception occurred
 2020-09-06T17:24:09Z ERROR Failed to read the text file
 2020-09-06T17:25:20Z INFO user input captured
+2020-09-06T17:26:09Z INFO application started
+2020-09-06T17:27:19Z ERROR user password incorrect
+2020-09-06T17:28:09Z ERROR can't file in that location
+2020-09-06T17:29:20Z INFO user input captured
+2020-09-06T18:23:09Z INFO application started
+2020-09-06T18:24:09Z ERROR an exception occurred
+2020-09-06T18:24:09Z ERROR Failed to read the text file
+2020-09-06T18:25:20Z INFO user input captured
+2020-09-06T18:26:09Z INFO application started
+2020-09-06T19:24:09Z ERROR an exception occurred
+2020-09-06T19:24:09Z ERROR Failed to read the text file
+2020-09-06T19:25:20Z INFO user input captured
+2020-09-06T19:26:09Z INFO application started
