@@ -23,8 +23,8 @@ public class MailSendAppTest {
     Operation operation = mock(Operation.class);
     Authorization authorization;
     EmailRepository emailRepository = mock(EmailRepository.class);
-    EmailHub emailHub;
-    UI ui;
+    EmailHub emailHub = mock(EmailHub.class);
+    UI ui = mock(UI.class);
 
     @Test
     public void should_get_correct_output_for_a_valid_filepath() throws IOException {
@@ -37,10 +37,12 @@ public class MailSendAppTest {
         readedData.add("2020-09-06T17:27:19Z ERROR user password incorrect");
         when(stringRepository.FileRead(path)).thenReturn(readedData);
 
-
         when(timeStampRepository.GetTimeStamp()).thenReturn("");
 
+        when(operation.getLastTimeStamp( readedData)).thenReturn("2020-09-06T17:27:19Z");
+
         when(operation.GetErrors(readedData, "")).thenReturn("ERROR an exception occurred\nERROR Failed to read the text file\nERROR user password incorrect");
+
 
 
         MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampRepository, operation,
