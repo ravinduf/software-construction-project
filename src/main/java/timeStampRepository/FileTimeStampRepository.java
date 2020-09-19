@@ -39,7 +39,7 @@ public class FileTimeStampRepository implements TimeStampRepository {
     public void SetTimeStamp(String time) {
         if ( time != null ){
             FileWriter fileWriter = null;
-            File file = new File("D:\\practices\\java practice\\untitled8\\src\\resources\\timeStamp.txt");
+            File file = new File("filesdir\\timeStamp.txt");
             try {
                 fileWriter = new FileWriter(file, false);
             } catch (IOException e) {
