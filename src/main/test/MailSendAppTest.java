@@ -49,11 +49,10 @@ public class MailSendAppTest {
                 emailRepository, authorization, emailHub, ui);
 
         mailSendApp.Execute();
-        
+
         verify(stringRepository).FileRead(path);
         verify(timeStampRepository).GetTimeStamp();
-        verify(operation.getLastTimeStamp( readedData ));
-        verify(operation.GetErrors( readedData, ""));
+
 
     }
 
