@@ -10,9 +10,7 @@ public class FilterOperation implements Operation {
     public String GetErrors ( ArrayList<String> readedDate, String time ) {
         Date date = null;
         String errorMessage = "";
-//      String sDate6 = "2020-09-06T17:29:20Z";
 
-//      Date date = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(sDate6.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
         String[] data = readedDate.get(readedDate.size()-1).split(" ");
 
         if( !data[0].equals(time)) {
@@ -24,7 +22,6 @@ public class FilterOperation implements Operation {
                         date = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(time.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
                     }
                 }
-//        System.out.println(date);
 
                 for ( String fileData: readedDate ) {
 
@@ -54,15 +51,15 @@ public class FilterOperation implements Operation {
                 if ( errorMessage != null ) {
                     return errorMessage;
                 }
-//                System.out.println("No ERRORS found");
+
                 return null;
             } else {
-//                System.out.println("LOG File is EMPTY");
+
                 return null;
             }
         }
         else {
-//            System.out.println("Log File is not Updated");
+
             return null;
         }
     }

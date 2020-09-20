@@ -59,7 +59,7 @@ public class MailSendAppTest {
 
         verify(stringRepository).FileRead(path);
         verify(timeStampRepository).GetTimeStamp();
-       
+
 
 
     }
