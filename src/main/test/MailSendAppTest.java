@@ -39,7 +39,7 @@ public class MailSendAppTest {
 
         when(timeStampRepository.GetTimeStamp()).thenReturn("");
 
-        when(operation.getLastTimeStamp( readedData)).thenReturn("2020-09-06T17:27:19Z");
+        when(operation.getLastTimeStamp( readedData )).thenReturn("2020-09-06T17:27:19Z");
 
         when(operation.GetErrors(readedData, "")).thenReturn("ERROR an exception occurred\nERROR Failed to read the text file\nERROR user password incorrect");
 
@@ -49,8 +49,11 @@ public class MailSendAppTest {
                 emailRepository, authorization, emailHub, ui);
 
         mailSendApp.Execute();
+        
         verify(stringRepository).FileRead(path);
         verify(timeStampRepository).GetTimeStamp();
+        verify(operation.getLastTimeStamp( readedData ));
+        verify(operation.GetErrors( readedData, ""));
 
     }
 
