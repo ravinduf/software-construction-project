@@ -1,4 +1,5 @@
 import Input.Input;
+import Input.Input;
 import authorization.Authorization;
 import authorization.EmailAuthorization;
 import emailManager.EmailHub;
@@ -40,6 +41,7 @@ public class MailSendApp {
         String errorMessage;
         String LastTimeStamp;
 
+        ui.printData("Enter the file path :");
         String filePath = input.getInput();
 
         try {
@@ -56,6 +58,10 @@ public class MailSendApp {
 
         timeStamp = timeStampRepository.GetTimeStamp();
         errorMessage = operation.GetErrors( readedData, timeStamp );
+
+        ui.printData("Error messages :");
+        ui.printData(errorMessage);
+
 
         if (errorMessage == null) {
             ui.printData("No Errors in file");
