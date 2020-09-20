@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class MysqlEmailRepository implements EmailRepository {
     Connection con;
     String user = "root";
-    String password = "";
+    String password = "root";
     String url = "jdbc:mysql://localhost:3306/emails";
-    String quary = "SELECT useremail FROM email";
+    String quary = "SELECT useremail FROM emails";
     ArrayList<String> userData = new ArrayList<String>();
 
     public MysqlEmailRepository() {

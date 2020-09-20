@@ -79,6 +79,8 @@ public class MailSendApp {
 
         ArrayList<String> emails = emailRepository.ReadOperation();
 
+        emails = authorization.Validation(emails);
+
         if (emails == null) {
             ui.printData("No emails in database");
             return;

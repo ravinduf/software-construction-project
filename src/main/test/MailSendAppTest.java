@@ -21,7 +21,7 @@ public class MailSendAppTest {
     StringRepository stringRepository = mock(StringRepository.class);
     TimeStampRepository timeStampRepository = mock(TimeStampRepository.class);
     Operation operation = mock(Operation.class);
-    Authorization authorization;
+    Authorization authorization = mock(Authorization.class);
     EmailRepository emailRepository = mock(EmailRepository.class);
     EmailHub emailHub = mock(EmailHub.class);
     UI ui = mock(UI.class);
@@ -43,7 +43,14 @@ public class MailSendAppTest {
 
         when(operation.GetErrors(readedData, "")).thenReturn("ERROR an exception occurred\nERROR Failed to read the text file\nERROR user password incorrect");
 
+        ArrayList<String> emails = new ArrayList<String>();
+        emails.add("jayodyachamodi@gmail.com");
+        emails.add("dmcsampath97@gmail.com");
+        emails.add("ravinduf@gmail.com");
 
+        when(emailRepository.ReadOperation()).thenReturn(emails);
+
+        when(authorization.Validation(emails)).thenReturn(emails);
 
         MailSendApp mailSendApp = new MailSendApp(input, stringRepository,  timeStampRepository, operation,
                 emailRepository, authorization, emailHub, ui);
@@ -52,6 +59,7 @@ public class MailSendAppTest {
 
         verify(stringRepository).FileRead(path);
         verify(timeStampRepository).GetTimeStamp();
+       
 
 
     }
