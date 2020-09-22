@@ -30,7 +30,7 @@ public class FilterOperation implements Operation {
 
                     Date temporyDate = Date.from(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(parseString.replaceFirst("Z", ".000+0000"), ZonedDateTime::from).toInstant());
 
-                    if ( date != null ) {
+                    if ( date != null) {
                         long diff = date.getTime() - temporyDate.getTime();
                         if ( diff < 0 ) {
                             if(fileDate[1].equals("ERROR") ) {
@@ -41,7 +41,6 @@ public class FilterOperation implements Operation {
                         }
                     } else {
                         if(fileDate[1].equals("ERROR") ) {
-
                             String[] split_error_message = fileData.split(" ", 3);
                             errorMessage += split_error_message[2] + "\n";
                         }
